@@ -1,5 +1,7 @@
 package Task7;
 
+import Exceptions.InvalidOperationException;
+
 public class DoubleCalculatorResult extends CalculatorResult{
 
     private Object l;
@@ -14,7 +16,7 @@ public class DoubleCalculatorResult extends CalculatorResult{
     }
 
     @Override
-    public Double computeResult() {
+    public Double computeResult() throws InvalidOperationException {
         if(l instanceof Integer)
             l = (double) ((Integer) l);
 
@@ -31,6 +33,6 @@ public class DoubleCalculatorResult extends CalculatorResult{
             case "/":
                 return (Double) l / (Double) r;
         }
-        return null;
+        throw new InvalidOperationException("Nu poti face aceasta operatie folosing acesti operanzi!");
     }
 }

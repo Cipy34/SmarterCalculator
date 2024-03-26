@@ -1,5 +1,7 @@
 package Task7;
 
+import Exceptions.InvalidOperationException;
+
 public class IntegerCalculatorResult extends CalculatorResult{
     private Object l;
     private Object r;
@@ -13,7 +15,7 @@ public class IntegerCalculatorResult extends CalculatorResult{
     }
 
     @Override
-    public Integer computeResult() {
+    public Integer computeResult() throws InvalidOperationException {
         switch (o){
             case "+":
                 return (Integer) l + (Integer) r;
@@ -24,6 +26,6 @@ public class IntegerCalculatorResult extends CalculatorResult{
             case "/":
                 return (Integer) l / (Integer) r;
         }
-        return null;
+        throw new InvalidOperationException("Nu poti face aceasta operatie folosing acesti operanzi!");
     }
 }

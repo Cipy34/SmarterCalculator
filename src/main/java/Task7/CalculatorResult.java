@@ -1,5 +1,7 @@
 package Task7;
 
+import Exceptions.InvalidOperationException;
+
 public abstract class CalculatorResult{
     private CalculatorRequest calculatorRequest;
     protected CalculatorResult(CalculatorRequest calculatorRequest){
@@ -10,5 +12,5 @@ public abstract class CalculatorResult{
         return calculatorRequest;
     }
 
-    public abstract Object computeResult();
+    public abstract Object computeResult() throws InvalidOperationException;
 }

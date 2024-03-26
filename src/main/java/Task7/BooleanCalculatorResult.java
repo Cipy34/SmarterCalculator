@@ -1,5 +1,7 @@
 package Task7;
 
+import Exceptions.InvalidOperationException;
+
 public class BooleanCalculatorResult extends CalculatorResult{
     private Object l;
     private Object r;
@@ -13,13 +15,13 @@ public class BooleanCalculatorResult extends CalculatorResult{
     }
 
     @Override
-    public Boolean computeResult() {
+    public Boolean computeResult() throws InvalidOperationException {
         switch (o){
             case "&&":
                 return (Boolean) l && (Boolean) r;
             case "||":
                 return (Boolean) l || (Boolean) r;
         }
-        return null;
+        throw new InvalidOperationException("Nu poti face aceasta operatie folosing acesti operanzi!");
     }
 }

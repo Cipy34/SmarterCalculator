@@ -1,10 +1,12 @@
 package Task7;
 
+import Exceptions.UnkownOperandTypeException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SmarterCalculator {
-    public static List<CalculatorResult> calculate(String[] args){
+    public static List<CalculatorResult> calculate(String[] args) throws UnkownOperandTypeException {
         InputConverter inputConverter = new InputConverter();
         List<CalculatorResult> rez = new ArrayList<>();
 
